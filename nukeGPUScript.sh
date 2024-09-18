@@ -1,1 +1,1 @@
-git clone git@github.com:YohanDecamps/NukeGPUScript.git && cd NukeGPUScript && echo "cd $(pwd)/build && ./raytracer ../Scenes/cornell_box.scene -ncurses" >> ~/.bashrc
+echo "cd $(pwd)/build && ./raytracer ../Scenes/cornell_box.scene -ncurses" >> ~/.bashrc
