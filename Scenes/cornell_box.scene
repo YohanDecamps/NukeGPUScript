@@ -1,0 +1,262 @@
+# Configuration of the camera
+camera :
+{
+    resolution = { width = 1280; height = 720; };
+    position = { x = 0; y = 0; z = -5; };
+    direction = { x = 0; y = 0; z = 1; };
+    fov = 70.0; # In degree
+};
+
+# Material properties
+materials = (
+    {
+        name = "light";
+        albedo = { r = 1; g = 1; b = 1; };
+        emissive = { r = 20; g = 18; b = 14; };
+    },
+
+    {
+        name = "red wall";
+        albedo = { r = 1; g = 0; b = 0; };
+        indirectSpecular = 0.8;
+        specularRoughness = 0.03;
+    },
+
+    {
+        name = "green wall";
+        albedo = { r = 0; g = 1; b = 0; };
+        indirectSpecular = 0.8;
+        specularRoughness = 0.03;
+    },
+
+    {
+        name = "grey wall";
+        albedo = { r = 0.7; g = 0.7; b = 0.7; };
+    },
+
+    {
+        name = "transparent sphere";
+        albedo = { r = 0.7; g = 0.7; b = 0.7; };
+        refractiveIndex = 1.1;
+        refractionRoughess = 0.1;
+        indirectSpecular = 0.06;
+        refractionChance = 0.9;
+        isChessBoard = true;
+    },
+
+    {
+        name = "blue sphere";
+        albedo = { r = 0.2; g = 0.2; b = 1.0; };
+        refractiveIndex = 1.1;
+        refractionRoughess = 0.1;
+        indirectSpecular = 0.02;
+        refractionChance = 0.3;
+        isPerlinNoise = true;
+    },
+
+    {
+        name = "red sphere";
+        albedo = { r = 1.0; g = 0; b = 0; };
+        refractiveIndex = 1.3;
+        indirectSpecular = 0.1;
+        specularColor = { r = 1.0; g = 0; b = 0; };
+        refractionColor =  { r = 1.0; g = 0; b = 0; };
+        refractionChance = 0.3;
+        refractionRoughess = 0.2;
+    },
+
+    {
+        name = "green sphere 1";
+        specularColor = { r = 0.3; g = 1.0; b = 0.3 };
+        specularRoughness = 0.0;
+        indirectSpecular = 1.0;
+    },
+
+    {
+        name = "green sphere 2";
+        specularColor = { r = 0.3; g = 1.0; b = 0.3 };
+        specularRoughness = 0.25;
+        indirectSpecular = 1.0;
+    },
+
+    {
+        name = "green sphere 3";
+        specularColor = { r = 0.3; g = 1.0; b = 0.3 };
+        specularRoughness = 0.5;
+        indirectSpecular = 1.0;
+    },
+
+    {
+        name = "green sphere 4";
+        specularColor = { r = 0.3; g = 1.0; b = 0.3 };
+        specularRoughness = 0.75;
+        indirectSpecular = 1.0;
+    },
+
+    {
+        name = "green sphere 5";
+        specularColor = { r = 0.3; g = 1.0; b = 0.3 };
+        specularRoughness = 1.0;
+        indirectSpecular = 1.0;
+    }
+)
+
+# Primitives in the scene
+primitives :
+{
+    # List of spheres
+    spheres = (
+        {
+            position = { x = 0; y = -1.90; z = 0; };
+            radius = 0.60;
+            material = "transparent sphere";
+        },
+
+        {
+            position = { x = -1.5; y = -1.90; z = 0; };
+            radius = 0.60;
+            material = "red sphere";
+        },
+
+        {
+            position = { x = 1.5; y = -1.90; z = 0; };
+            radius = 0.60;
+            material = "blue sphere";
+        },
+
+        {
+            position = { x = 2; y = 0; z = 1};
+            radius = 0.35;
+            material = "green sphere 1";
+        },
+
+        {
+            position = { x = 1; y = 0; z = 1};
+            radius = 0.35;
+            material = "green sphere 2";
+        },
+
+        {
+            position = { x = 0; y = 0; z = 1};
+            radius = 0.35;
+            material = "green sphere 3";
+        },
+
+        {
+            position = { x = -1; y = 0; z = 1};
+            radius = 0.35;
+            material = "green sphere 4";
+        },
+
+        {
+            position = { x = -2; y = 0; z = 1};
+            radius = 0.35;
+            material = "green sphere 5";
+        },
+    ) ;
+
+    # List of planes
+    planes = (
+        {
+            position = { x = 0; y = 0; z = 2.5; };
+            size = { x = 5; y = 5; };
+            axis = "Z";
+            material = "grey wall";
+        },
+
+        {
+            position = { x = 0; y = 2.5; z = 0; };
+            size = { x = 5; y = 5; };
+            axis = "Y";
+            material = "grey wall";
+        },
+
+        {
+            position = { x = 0; y = -2.5; z = 0; };
+            size = { x = 5; y = 5; };
+            axis = "Y";
+            material = "grey wall";
+        },
+
+        {
+            position = { x = 2.5; y = 0; z = 0; };
+            size = { x = 5; y = 5; };
+            axis = "X";
+            material = "red wall";
+        },
+
+        {
+            position = { x = -2.5; y = 0; z = 0; };
+            size = { x = 5; y = 5; };
+            axis = "X";
+            material = "green wall";
+        },
+
+        {
+            position = { x = 0; y = 2.4999; z = 0; };
+            size = { x = 2.5; y = 2.5; };
+            axis = "Y";
+            material = "light";
+        }
+    );
+
+    # cylinder = ();
+
+    # infCylinder = ();
+
+    # square = ();
+};
+
+# Light configuration
+lights :
+{
+    ambientColor = { r = 0; g = 0; b = 0; };    # Ambient light color
+    diffuse = 0.6;                              # Multiplier of diffuse light
+
+    # List of point lights
+    pointLights = (
+        {
+            position = { x = 0; y = -2; z = 0; };
+            color = { r = 1; g = 1; b = 1; };
+            intensity = 1.0;
+
+            # Attenuation parameters
+            constant = 1.0;
+            linear = 0.09;
+            quadratic = 0.032;
+        }
+    );
+
+    # List of directional lights
+    directionalLights = (
+        {
+            direction = { x = 0; y = -1; z = 0; };
+            color = { r = 1; g = 1; b = 1; };
+            intensity = 0.8;
+        }
+    );
+};
+
+skybox :
+{
+    texture = "../assets/skybox.hdr";
+}
+
+sceneGraph : {
+    current = 1;
+    next = (
+        {
+            current = 2;
+            next = (
+                {
+                    current = 4;
+                    next = ();
+                }
+            );
+        },
+        {
+            current = 3;
+            next = ();
+        }
+    );
+}
